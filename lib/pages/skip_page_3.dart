@@ -1,4 +1,5 @@
 import 'package:bdtask_ecommerce_apps/pages/home_page_1.dart';
+import 'package:bdtask_ecommerce_apps/pages/signInPage.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/bottomNavigationBarPage.dart';
@@ -131,8 +132,7 @@ class SkipPage3 extends StatelessWidget {
                                 onTap: () => Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            BottonNavigationBarPage())),
+                                        builder: (context) => SignInPage())),
                                 child: Text(
                                   'SKIP',
                                   style: TextStyle(

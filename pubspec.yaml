@@ -37,6 +37,7 @@ dependencies:
   adobe_xd: ^2.0.1
   flutter_carousel_slider: ^1.0.8
   flutter_svg: ^1.0.3
+  fluttertoast: ^8.0.9
 
 dev_dependencies:
   flutter_test:

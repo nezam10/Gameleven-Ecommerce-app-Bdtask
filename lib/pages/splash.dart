@@ -24,36 +24,38 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color.fromARGB(255, 152, 112, 228),
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Colors.white,
-              Color.fromARGB(255, 238, 206, 213),
-              Color.fromARGB(255, 231, 180, 191),
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Color.fromARGB(255, 152, 112, 228),
+        body: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Colors.white,
+                Color.fromARGB(255, 238, 206, 213),
+                Color.fromARGB(255, 231, 180, 191),
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+            // image: new DecorationImage(
+            //   image: ExactAssetImage('assets/gameleven.png'),
+            //   fit: BoxFit.cover,
+            // ),
           ),
-          // image: new DecorationImage(
-          //   image: ExactAssetImage('assets/gameleven.png'),
-          //   fit: BoxFit.cover,
-          // ),
-        ),
-        child: Center(
-          child: Container(
-              width: MediaQuery.of(context).size.width / 1.5,
-              height: 100.0,
-              decoration: new BoxDecoration(
-                image: new DecorationImage(
-                  image: ExactAssetImage('assets/gameleven.png'),
-                  fit: BoxFit.fill,
-                ),
-              )),
+          child: Center(
+            child: Container(
+                width: MediaQuery.of(context).size.width / 1.5,
+                height: 100.0,
+                decoration: new BoxDecoration(
+                  image: new DecorationImage(
+                    image: ExactAssetImage('assets/gameleven.png'),
+                    fit: BoxFit.fill,
+                  ),
+                )),
+          ),
         ),
       ),
     );

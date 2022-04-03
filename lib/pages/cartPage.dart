@@ -1,14 +1,249 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:rotated_corner_decoration/rotated_corner_decoration.dart';
 
-class CartPage extends StatelessWidget {
-  const CartPage({Key? key}) : super(key: key);
+import '../class/brandList.dart';
+
+class CartPage extends StatefulWidget {
+  CartPage({Key? key}) : super(key: key);
+
+  @override
+  State<CartPage> createState() => _CartPageState();
+}
+
+class _CartPageState extends State<CartPage> {
+  bool isChecked = false;
+  bool _value = false;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text("Cart Page"),
-      ),
+    Color getColor(Set<MaterialState> states) {
+      const Set<MaterialState> interactiveStates = <MaterialState>{
+        MaterialState.pressed,
+        MaterialState.hovered,
+        MaterialState.focused,
+      };
+      if (states.any(interactiveStates.contains)) {
+        return Colors.blue;
+      }
+      return Colors.red;
+    }
+
+    return SafeArea(
+      child: Scaffold(
+          body: Column(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: 75,
+            color: Colors.grey[100],
+            child: Row(
+              children: [
+                IconButton(
+                    onPressed: () {}, icon: Icon(Icons.arrow_back_rounded)),
+                Text(
+                  'Shopping Cart',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: const Color(0xFF404040),
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              padding: EdgeInsets.all(0.0),
+              shrinkWrap: true,
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                var show = blist().wishlistname[index];
+                var show2 = blist().wishlistname2[index];
+                var showbrandicon = blist().wishlisticon[index];
+                return Container(
+                  margin: EdgeInsets.only(bottom: 5),
+                  height: 120,
+                  width: MediaQuery.of(context).size.width,
+                  color: Colors.white,
+                  child: Row(
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: Container(
+                          //color: Colors.blue,
+                          height: MediaQuery.of(context).size.height,
+                          width: 100,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Image.asset(
+                              "$showbrandicon",
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 5),
+                      Expanded(
+                        flex: 4,
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 10.0),
+                          child: Container(
+                            //color: Colors.blue,
+                            height: MediaQuery.of(context).size.height,
+                            width: 100,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Power Bank Water Gold ',
+                                          style: TextStyle(
+                                            fontSize: 16.0,
+                                            color: const Color(0xFF7E7E7E),
+                                            height: 1.06,
+                                          ),
+                                        ),
+                                        Text(
+                                          'Sound Box',
+                                          style: TextStyle(
+                                            fontSize: 16.0,
+                                            color: const Color(0xFF7E7E7E),
+                                            height: 1.06,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    //Icon(Icons.favorite),
+                                    Container(
+                                      height: 20,
+                                      width: 30,
+                                      //color: Colors.red,
+                                      child: Checkbox(
+                                        checkColor: Colors.white,
+                                        fillColor:
+                                            MaterialStateProperty.resolveWith(
+                                                getColor),
+                                        value: isChecked,
+                                        shape: CircleBorder(),
+                                        onChanged: (bool? value) {
+                                          setState(() {
+                                            isChecked = value!;
+                                          });
+                                        },
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Text(
+                                  '$show2',
+                                  style: TextStyle(
+                                    fontSize: 15.0,
+                                    color: const Color(0xFFB2B2B2),
+                                    fontWeight: FontWeight.w500,
+                                    height: 1.5,
+                                  ),
+                                ),
+                                SizedBox(height: 6),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 5.0),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        '$show',
+                                        style: TextStyle(
+                                          fontSize: 15.0,
+                                          color: const Color(0xFFD81D4C),
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                      // Group: Group 348
+
+                                      SizedBox(
+                                        width: 85.0,
+                                        height: 28.0,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: <Widget>[
+                                            Container(
+                                              alignment: Alignment(-0.05, -0.2),
+                                              width: 25.0,
+                                              height: 25.0,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(3.0),
+                                                color: const Color(0xFFF0F0F0),
+                                              ),
+                                              child: Text(
+                                                '+',
+                                                style: TextStyle(
+                                                  fontSize: 17.0,
+                                                  color:
+                                                      const Color(0xFF837A7A),
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              ),
+                                            ),
+                                            Text(
+                                              '01',
+                                              style: TextStyle(
+                                                fontSize: 18.0,
+                                                color: const Color(0xFF837A7A),
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
+                                            Container(
+                                              alignment: Alignment.center,
+                                              width: 25.0,
+                                              height: 25.0,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(3.0),
+                                                color: const Color(0xFFF0F0F0),
+                                              ),
+                                              child: Text(
+                                                '-',
+                                                style: TextStyle(
+                                                  fontSize: 18.0,
+                                                  color:
+                                                      const Color(0xFF837A7A),
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      )),
     );
   }
 }

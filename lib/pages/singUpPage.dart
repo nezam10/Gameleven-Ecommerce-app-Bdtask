@@ -1,4 +1,5 @@
 import 'package:bdtask_ecommerce_apps/pages/home_page_1.dart';
+import 'package:bdtask_ecommerce_apps/pages/signInPage.dart';
 import 'package:bdtask_ecommerce_apps/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,14 +8,15 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 import '../widgets/bottomNavigationBarPage.dart';
 
-class SignPuPage extends StatefulWidget {
-  const SignPuPage({Key? key}) : super(key: key);
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({Key? key}) : super(key: key);
 
   @override
-  State<SignPuPage> createState() => _SignPuPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _SignPuPageState extends State<SignPuPage> {
+class _SignUpPageState extends State<SignUpPage> {
+  bool isChecked = false;
   var email, password;
 
   var emailController = TextEditingController();
@@ -67,6 +69,18 @@ class _SignPuPageState extends State<SignPuPage> {
   Widget build(BuildContext context) {
     //SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
 
+    Color getColor(Set<MaterialState> states) {
+      const Set<MaterialState> interactiveStates = <MaterialState>{
+        MaterialState.pressed,
+        MaterialState.hovered,
+        MaterialState.focused,
+      };
+      if (states.any(interactiveStates.contains)) {
+        return Colors.blue;
+      }
+      return Color.fromARGB(255, 184, 182, 182);
+    }
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(new FocusNode()),
       child: SafeArea(
@@ -79,309 +93,261 @@ class _SignPuPageState extends State<SignPuPage> {
                 children: [
                   Container(
                     width: MediaQuery.of(context).size.width,
-                    height: 80.0,
+                    height: 70.0,
                     color: const Color(0xFF72142C),
-                    child: Row(
-                      children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.arrow_back,
-                              color: Colors.white, size: 28),
-                        ),
-                        Text(
-                          'Sign In',
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const SignInPage()),
+                              );
+                            },
+                            icon: Icon(Icons.arrow_back,
+                                color: Colors.white, size: 28),
                           ),
-                        )
-                      ],
+                          Text(
+                            'Sign In',
+                            style: TextStyle(
+                              fontSize: 16.0,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   //SizedBox(height: 20),
-                  Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Container(
-                      // color: Colors.blue,
-                      //height: MediaQuery.of(context).size.height / 1.18,
-                      width: MediaQuery.of(context).size.width,
-                      child: Center(
-                        child: Stack(
-                          alignment: Alignment.bottomCenter,
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 15.0, bottom: 15),
-                              child: Container(
-                                //height: MediaQuery.of(context).size.height / 1.2,
-                                width: MediaQuery.of(context).size.width / 1.15,
-                                //color: Colors.red,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    SizedBox(
-                                      width: 187.0,
-                                      height: 65.17,
-                                      child: Image.asset(
-                                        "assets/gameleven.png",
-                                        fit: BoxFit.fill,
-                                      ),
+                  Container(
+                    // color: Colors.blue,
+                    //height: MediaQuery.of(context).size.height / 1.18,
+                    width: MediaQuery.of(context).size.width,
+                    child: Center(
+                      child: Stack(
+                        alignment: Alignment.bottomCenter,
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(top: 25.0, bottom: 15),
+                            child: Container(
+                              //height: MediaQuery.of(context).size.height / 1.2,
+                              width: MediaQuery.of(context).size.width / 1.15,
+                              //color: Colors.red,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SizedBox(
+                                    width: 187.0,
+                                    height: 65.17,
+                                    child: Image.asset(
+                                      "assets/gameleven.png",
+                                      fit: BoxFit.fill,
                                     ),
-                                    SizedBox(
-                                        height:
-                                            MediaQuery.of(context).size.height /
-                                                19),
-                                    CustomTextField(
-                                      controller: emailController,
-                                      hintText: "Phone Number",
-                                      prefixIcon: Icon(Icons.phone, size: 20),
-                                      validator: (valu) {
-                                        if (valu!.isEmpty) {
-                                          return "Please Enter Your Number";
-                                        }
-                                        return null;
-                                      },
-                                      onSaved: (value) {
-                                        email = value;
-                                      },
-                                    ),
-                                    SizedBox(
-                                        height:
-                                            MediaQuery.of(context).size.height /
-                                                58),
-                                    CustomTextField(
-                                      controller: passwordController,
-                                      hintText: "Password",
-                                      prefixIcon:
-                                          Icon(Icons.lock_outline, size: 20),
-                                      suffixIcon: IconButton(
-                                        iconSize: 20,
-                                        onPressed: () {
-                                          updateStatus();
+                                  ),
+                                  SizedBox(
+                                      height:
+                                          MediaQuery.of(context).size.height /
+                                              30),
+                                  CustomTextField(
+                                    controller: emailController,
+                                    hintText: "First Name",
+                                    validator: (valu) {
+                                      if (valu!.isEmpty) {
+                                        return "Please Enter Your Name";
+                                      }
+                                      return null;
+                                    },
+                                    onSaved: (value) {
+                                      email = value;
+                                    },
+                                  ),
+                                  SizedBox(
+                                      height:
+                                          MediaQuery.of(context).size.height /
+                                              70),
+                                  CustomTextField(
+                                    controller: passwordController,
+                                    hintText: "Email",
+
+                                    validator: (value) {
+                                      if (value!.isEmpty) {
+                                        return 'Please Enter Email';
+                                      }
+                                      return null;
+                                    },
+                                    onSaved: (value) {
+                                      password = value;
+                                    },
+                                    //obscureText: _isVisible ? false : true,
+                                  ),
+                                  SizedBox(
+                                      height:
+                                          MediaQuery.of(context).size.height /
+                                              70),
+                                  CustomTextField(hintText: "Password"),
+                                  SizedBox(
+                                      height:
+                                          MediaQuery.of(context).size.height /
+                                              70),
+                                  CustomTextField(
+                                    hintText: "Phone Number",
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  SizedBox(
+                                      height:
+                                          MediaQuery.of(context).size.height /
+                                              70),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Checkbox(
+                                        checkColor: Colors.white,
+                                        fillColor:
+                                            MaterialStateProperty.resolveWith(
+                                                getColor),
+                                        value: isChecked,
+                                        onChanged: (bool? value) {
+                                          setState(() {
+                                            isChecked = value!;
+                                          });
                                         },
-                                        icon: Icon(_isVisible
-                                            ? Icons.visibility
-                                            : Icons.visibility_off),
                                       ),
-                                      validator: (value) {
-                                        if (value!.isEmpty) {
-                                          return 'Please Enter Password';
-                                        }
-                                        return value.length <= 6
-                                            ? 'Password must be six characters'
-                                            : null;
-                                      },
-                                      onSaved: (value) {
-                                        password = value;
-                                      },
-                                      obscureText: _isVisible ? false : true,
-                                    ),
-                                    SizedBox(
-                                        height:
-                                            MediaQuery.of(context).size.height /
-                                                58),
-                                    CustomTextField(hintText: "Name"),
-                                    SizedBox(
-                                        height:
-                                            MediaQuery.of(context).size.height /
-                                                58),
-                                    CustomTextField(hintText: "Name"),
-                                    SizedBox(
-                                        height:
-                                            MediaQuery.of(context).size.height /
-                                                65),
-                                    Align(
-                                      alignment: Alignment.centerRight,
-                                      child: Text(
-                                        'Forgot your password?',
-                                        style: TextStyle(
-                                          fontSize: 15.0,
-                                          color: const Color(0xFF9A9A9A),
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                        height:
-                                            MediaQuery.of(context).size.height /
-                                                65),
-                                    GestureDetector(
-                                      onTap: () {
-                                        checkValidation(emailController.text,
-                                            passwordController.text);
-                                      },
-                                      child: Container(
-                                        width: 331.0,
-                                        height: 60.0,
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(2.0),
-                                          color: const Color(0xFFD81D4C),
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            'Create Account',
-                                            style: TextStyle(
-                                              fontSize: 17.0,
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                        height:
-                                            MediaQuery.of(context).size.height /
-                                                65),
-                                    Row(
-                                      children: [
-                                        Expanded(
-                                          flex: 2,
-                                          child: Container(
-                                            color: const Color(0xFF9A9A9A),
-                                            height: 1,
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width,
-                                          ),
-                                        ),
-                                        Expanded(
-                                            flex: 1,
-                                            child: Text(
-                                              'OR',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontSize: 15.0,
-                                                color: const Color(0xFF9A9A9A),
-                                              ),
-                                            )),
-                                        Expanded(
-                                          flex: 2,
-                                          child: Container(
-                                            color: const Color(0xFF9A9A9A),
-                                            height: 1,
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                        height:
-                                            MediaQuery.of(context).size.height /
-                                                55),
-                                    Container(
-                                      height: 35,
-                                      width: MediaQuery.of(context).size.width /
-                                          1.8,
-                                      child: Row(
+                                      Column(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
-                                          Container(
-                                            height: 33.95,
-                                            width: 33.95,
-                                            decoration: BoxDecoration(
-                                              color: Colors.white,
-                                              borderRadius:
-                                                  BorderRadius.circular(5),
-                                            ),
-                                            child: Image.asset(
-                                              "assets/facebook.png",
-                                              fit: BoxFit.fitHeight,
-                                            ),
-                                          ),
-                                          Container(
-                                            height: 33.95,
-                                            width: 33.95,
-                                            decoration: BoxDecoration(
-                                              color: Color.fromARGB(
-                                                  255, 81, 172, 246),
-                                              borderRadius:
-                                                  BorderRadius.circular(5),
-                                            ),
-                                            child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(6.0),
-                                              child: Image.asset(
-                                                "assets/google.png",
-                                                fit: BoxFit.fitHeight,
-                                                color: Colors.white,
+                                          Row(
+                                            children: [
+                                              Text(
+                                                "I agree to the",
+                                                style: TextStyle(
+                                                  fontSize: 14.0,
+                                                  color:
+                                                      const Color(0xFF6E6E6E),
+                                                ),
                                               ),
-                                            ),
+                                              GestureDetector(
+                                                onTap: () {
+                                                  Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            const SignUpPage()),
+                                                  );
+                                                },
+                                                child: Text(
+                                                  " Privacy Policy",
+                                                  style: TextStyle(
+                                                    fontSize: 14.0,
+                                                    color:
+                                                        const Color(0xFFD81D4C),
+                                                  ),
+                                                ),
+                                              ),
+                                              Text(
+                                                " and terms &",
+                                                style: TextStyle(
+                                                  fontSize: 14.0,
+                                                  color:
+                                                      const Color(0xFF6E6E6E),
+                                                ),
+                                              ),
+                                            ],
                                           ),
-                                          Container(
-                                            height: 33.95,
-                                            width: 33.95,
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(5),
-                                            ),
-                                            child: Image.asset(
-                                              "assets/instagram.png",
-                                              fit: BoxFit.fitHeight,
-                                            ),
-                                          ),
-                                          Container(
-                                            height: 33.95,
-                                            width: 33.95,
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(5),
-                                            ),
-                                            child: Image.asset(
-                                              "assets/linkedin.png",
-                                              fit: BoxFit.fitHeight,
+                                          Text(
+                                            "Conditions of Limarket",
+                                            style: TextStyle(
+                                              fontSize: 14.0,
+                                              color: const Color(0xFF6E6E6E),
                                             ),
                                           ),
                                         ],
                                       ),
-                                    ),
-                                    SizedBox(
-                                        height:
-                                            MediaQuery.of(context).size.height /
-                                                58),
-                                    Text(
-                                      'By clicking this button, you agree to our privacy Policy',
-                                      style: TextStyle(
-                                        fontSize: 12.0,
-                                        color: const Color(0xFF9A9A9A),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                      height:
+                                          MediaQuery.of(context).size.height /
+                                              50),
+                                  GestureDetector(
+                                    onTap: () {
+                                      checkValidation(emailController.text,
+                                          passwordController.text);
+                                    },
+                                    child: Container(
+                                      width: MediaQuery.of(context).size.width,
+                                      height: 58.0,
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(2.0),
+                                        color: const Color(0xFFD81D4C),
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          'Create Account',
+                                          style: TextStyle(
+                                            fontSize: 17.0,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
                                       ),
                                     ),
-                                    SizedBox(height: 35),
-                                  ],
-                                ),
+                                  ),
+                                  SizedBox(
+                                      height:
+                                          MediaQuery.of(context).size.height /
+                                              70),
+                                  SizedBox(height: 25),
+                                ],
                               ),
                             ),
-                            Positioned(
-                              child: Container(
-                                height: 25,
-                                //color: Colors.green,
-                                child: Text.rich(
-                                  TextSpan(
+                          ),
+                          Positioned(
+                            child: Container(
+                              height: 25,
+                              //color: Colors.green,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Already Have An Account ?",
                                     style: TextStyle(
                                       fontSize: 14.0,
                                       color: const Color(0xFF6E6E6E),
                                     ),
-                                    children: [
-                                      TextSpan(
-                                        text: 'Already Have An Account ?',
-                                      ),
-                                      TextSpan(
-                                        text: ' Sign In',
-                                        style: TextStyle(
-                                          color: const Color(0xFFD81D4C),
-                                        ),
-                                      ),
-                                    ],
                                   ),
-                                ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const SignInPage()),
+                                      );
+                                    },
+                                    child: Text(
+                                      " Sign In",
+                                      style: TextStyle(
+                                        fontSize: 14.0,
+                                        color: const Color(0xFFD81D4C),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   )

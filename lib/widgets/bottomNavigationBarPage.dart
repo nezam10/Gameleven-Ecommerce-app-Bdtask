@@ -39,28 +39,22 @@ class _BottonNavigationBarPageState extends State<BottonNavigationBarPage> {
         selectedItemColor: Colors.red,
         unselectedItemColor: Color(0xFF656567),
         unselectedLabelStyle: TextStyle(color: Colors.grey, fontSize: 8),
-        showSelectedLabels: false,
-        selectedIconTheme: IconThemeData(size: 25),
+        showSelectedLabels: true,
+        selectedIconTheme: IconThemeData(size: 30),
         showUnselectedLabels: true,
         backgroundColor: Colors.blue,
         currentIndex: _selectIndex,
         onTap: _navigationBottonBar,
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.grid_view_outlined, color: Color(0xFF656567)),
-              label: "Category"),
+              icon: Icon(Icons.grid_view_outlined), label: "Category"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_border, color: Color(0xFF656567)),
-              label: "Wishlist"),
+              icon: Icon(Icons.favorite_border), label: "Wishlist"),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.home, color: Colors.red), label: "Home"),
+              icon: Icon(Icons.add_shopping_cart_outlined), label: "Cart"),
           BottomNavigationBarItem(
-              icon:
-                  Icon(Icons.shopping_cart_outlined, color: Color(0xFF656567)),
-              label: "Home"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person_outline, color: Color(0xFF656567)),
-              label: "Account"),
+              icon: Icon(Icons.person_outline), label: "Account"),
         ],
       ),
     );

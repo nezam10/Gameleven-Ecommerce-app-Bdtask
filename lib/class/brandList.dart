@@ -24,6 +24,32 @@ class blist {
     'assets/mouse.png',
   ];
 
+  List wishlisticon = [
+    'assets/headset.png',
+    'assets/mouse.png',
+    'assets/ppc.png',
+    'assets/cheir.png',
+    'assets/pc2.png',
+    'assets/pc2.png',
+  ];
+  List<String> wishlistname = [
+    '550.00 SAR',
+    '490.00 SAR',
+    '500.00 SAR',
+    '450.00 SAR',
+    '870.00 SAR',
+    '890.00 SAR',
+  ];
+
+  List<String> wishlistname2 = [
+    '45000.00XAF X 1',
+    '45000.00XAF X 1',
+    '',
+    '45000.00XAF X 1',
+    '45000.00XAF X 1',
+    '45000.00XAF X 1',
+  ];
+
   List banarimage = [
     'assets/pc.png',
     'assets/gameleven2.png',

@@ -28,7 +28,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      height: 55,
       alignment: Alignment.center,
       decoration: const BoxDecoration(
         color: const Color(0xFFF0F0F0),
@@ -37,7 +37,7 @@ class CustomTextField extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.only(left: 12.0),
+        padding: const EdgeInsets.only(left: 15.0),
         child: TextFormField(
           controller: controller,
           keyboardType: keyboardType,

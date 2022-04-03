@@ -1,4 +1,5 @@
 import 'package:bdtask_ecommerce_apps/pages/home_page_1.dart';
+import 'package:bdtask_ecommerce_apps/pages/singUpPage.dart';
 import 'package:bdtask_ecommerce_apps/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -111,7 +112,7 @@ class _SignInPageState extends State<SignInPage> {
                         alignment: Alignment.bottomCenter,
                         children: [
                           Container(
-                            height: MediaQuery.of(context).size.height / 1.2,
+                            height: MediaQuery.of(context).size.height / 1.3,
                             width: MediaQuery.of(context).size.width / 1.15,
                             //color: Colors.red,
                             child: Column(
@@ -127,7 +128,7 @@ class _SignInPageState extends State<SignInPage> {
                                 ),
                                 SizedBox(
                                     height: MediaQuery.of(context).size.height /
-                                        19),
+                                        25),
                                 CustomTextField(
                                   controller: emailController,
                                   hintText: "Phone Number",
@@ -318,7 +319,7 @@ class _SignInPageState extends State<SignInPage> {
                                 ),
                                 SizedBox(
                                     height: MediaQuery.of(context).size.height /
-                                        58),
+                                        50),
                                 Text(
                                   'By clicking this button, you agree to our privacy Policy',
                                   style: TextStyle(
@@ -326,6 +327,7 @@ class _SignInPageState extends State<SignInPage> {
                                     color: const Color(0xFF9A9A9A),
                                   ),
                                 ),
+                                SizedBox(height: 50),
                               ],
                             ),
                           ),
@@ -333,24 +335,34 @@ class _SignInPageState extends State<SignInPage> {
                             child: Container(
                               height: 25,
                               //color: Colors.green,
-                              child: Text.rich(
-                                TextSpan(
-                                  style: TextStyle(
-                                    fontSize: 14.0,
-                                    color: const Color(0xFF6E6E6E),
-                                  ),
-                                  children: [
-                                    TextSpan(
-                                      text: 'Don’t Have An Account ?',
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Don’t Have An Account ?",
+                                    style: TextStyle(
+                                      fontSize: 14.0,
+                                      color: const Color(0xFF6E6E6E),
                                     ),
-                                    TextSpan(
-                                      text: ' Sign Up',
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const SignUpPage()),
+                                      );
+                                    },
+                                    child: Text(
+                                      " Sign Up",
                                       style: TextStyle(
+                                        fontSize: 14.0,
                                         color: const Color(0xFFD81D4C),
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),

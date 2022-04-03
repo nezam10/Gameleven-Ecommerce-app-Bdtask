@@ -147,12 +147,18 @@ class SkipPage2 extends StatelessWidget {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => SkipPage3())),
-                                child: Text(
-                                  'SKIP',
-                                  style: TextStyle(
-                                    fontSize: 17.0,
-                                    color: const Color(0xFF2F2F2F),
-                                    fontWeight: FontWeight.w500,
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  height: 30,
+                                  width: 80,
+                                  //color: Colors.red,
+                                  child: Text(
+                                    'SKIP',
+                                    style: TextStyle(
+                                      fontSize: 17.0,
+                                      color: const Color(0xFF2F2F2F),
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                   ),
                                 ),
                               ),

@@ -428,11 +428,11 @@ class DetailsPage extends StatelessWidget {
                 // Group: Group 338
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 250.0,
+                  height: 255.0,
                   color: Colors.white,
                   child: Padding(
                     padding: const EdgeInsets.only(
-                        left: 12.0, right: 12.0, top: 12.0, bottom: 12.0),
+                        left: 12.0, right: 12.0, top: 12.0, bottom: 2.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,

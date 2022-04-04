@@ -456,7 +456,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
 
               Container(
                 alignment: Alignment(-0.11, 0.14),
-                width: 416.0,
+                width: MediaQuery.of(context).size.width,
                 height: 106.0,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -469,7 +469,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                   ],
                 ),
                 child: SizedBox(
-                  width: 333.06,
+                  width: MediaQuery.of(context).size.width/1.12,
                   height: 106.0,
                   child: Column(
                     children: <Widget>[
@@ -524,7 +524,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                               builder: (context) {
                                 return Container(
                                   width: MediaQuery.of(context).size.width,
-                                  height: 449.0,
+                                  height: 429.0,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.only(
                                         topRight: Radius.circular(10),

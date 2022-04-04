@@ -1,3 +1,4 @@
+import 'package:bdtask_ecommerce_apps/pages/signInPage.dart';
 import 'package:bdtask_ecommerce_apps/widgets/bottomNavigationBarPage.dart';
 import 'package:flutter/material.dart';
 
@@ -338,55 +339,60 @@ class AccountPage extends StatelessWidget {
                 SizedBox(height: 15),
                 Padding(
                   padding: const EdgeInsets.only(left: 25.0, right: 10),
-                  child: Container(
-                    width: 416.0,
-                    height: 52.0,
-                    decoration: BoxDecoration(
-                        //color: Colors.white,
-                        ),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              width: 50.0,
-                              height: 50.0,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(25),
-                                color: Colors.white,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: const Color(0xFF9D9D9D)
-                                        .withOpacity(0.16),
-                                    offset: Offset(0, 0),
-                                    blurRadius: 6.0,
-                                  ),
-                                ],
-                              ),
-                              child: Icon(
-                                Icons.logout,
-                                color: Colors.red,
-                              ),
-                            ),
-                            SizedBox(width: 15),
-                            Text(
-                              'Logout',
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                color: const Color(0xFF404040),
-                              ),
-                            )
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 20.0),
-                          child: Container(
-                            color: Color.fromARGB(255, 228, 225, 225),
-                            height: 1,
-                            width: MediaQuery.of(context).size.width / 1.5,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>SignInPage()));
+                    },
+                    child: Container(
+                      width: 416.0,
+                      height: 52.0,
+                      decoration: BoxDecoration(
+                          //color: Colors.blue,
                           ),
-                        )
-                      ],
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                width: 50.0,
+                                height: 50.0,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25),
+                                  color: Colors.white,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: const Color(0xFF9D9D9D)
+                                          .withOpacity(0.16),
+                                      offset: Offset(0, 0),
+                                      blurRadius: 6.0,
+                                    ),
+                                  ],
+                                ),
+                                child: Icon(
+                                  Icons.logout,
+                                  color: Colors.red,
+                                ),
+                              ),
+                              SizedBox(width: 15),
+                              Text(
+                                'Logout',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  color: const Color(0xFF404040),
+                                ),
+                              )
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20.0),
+                            child: Container(
+                              color: Color.fromARGB(255, 228, 225, 225),
+                              height: 1,
+                              width: MediaQuery.of(context).size.width / 1.5,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),

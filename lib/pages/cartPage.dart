@@ -159,7 +159,7 @@ class _CartPageState extends State<CartPage> {
                               padding: const EdgeInsets.all(20.0),
                               child: Image.asset(
                                 "$showbrandicon",
-                                fit: BoxFit.fill,
+                                fit: BoxFit.fitHeight,
                               ),
                             ),
                           ),

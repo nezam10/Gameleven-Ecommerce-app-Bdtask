@@ -1,3 +1,4 @@
+import 'package:bdtask_ecommerce_apps/pages/checkOutPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -179,21 +180,29 @@ class AddToCart extends StatelessWidget {
                 SizedBox(width: 10),
                 Expanded(
                   flex: 1,
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 36.0,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.0),
-                        color: Colors.red),
-                    child: Center(
-                        child: Text(
-                      'Check Out',
-                      style: TextStyle(
-                        fontSize: 14.0,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    )),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CheckOutPage()));
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 36.0,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5.0),
+                          color: Colors.red),
+                      child: Center(
+                          child: Text(
+                        'Check Out',
+                        style: TextStyle(
+                          fontSize: 14.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      )),
+                    ),
                   ),
                 ),
               ],

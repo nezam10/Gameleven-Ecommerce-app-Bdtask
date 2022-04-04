@@ -39,7 +39,7 @@ class _SignInPageState extends State<SignInPage> {
         }
       } else {
         //1st if-else
-        toastMessage('Wrong Email Address');
+        toastMessage('Wrong Number');
       }
     }
   }

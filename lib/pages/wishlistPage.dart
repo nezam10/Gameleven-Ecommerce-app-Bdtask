@@ -110,17 +110,76 @@ class WishlistPage extends StatelessWidget {
                             alignment: Alignment.topCenter,
                             child: CustomPaint(
                               painter: Chevron(),
-                              child: Container(
-                                width: MediaQuery.of(context).size.width,
-                                height: 65.0,
-                                child: Align(
-                                  alignment: Alignment.topRight,
-                                  child: Image.asset(
-                                    "assets/delete.png",
-                                    fit: BoxFit.cover,
-                                    height: 30,
-                                    width: 30,
-                                    color: Colors.black,
+                              child: GestureDetector(
+                                onTap: () {
+                                  showDialog(
+                                    context: context,
+                                    barrierDismissible: true,
+                                    builder: (param) {
+                                      return AlertDialog(
+                                        actions: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                bottom: 8.0),
+                                            child: FlatButton(
+                                              minWidth: 100.0,
+                                              color: Colors.red,
+                                              onPressed: () =>
+                                                  Navigator.pop(context),
+                                              child: Text(
+                                                'CANCEL',
+                                                style: TextStyle(
+                                                  fontSize: 14.0,
+                                                  color: Colors.white,
+                                                  height: 1.36,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                right: 8.0, bottom: 8.0),
+                                            child: FlatButton(
+                                              minWidth: 80.0,
+                                              color: const Color(0xFF0A0A5A),
+                                              onPressed: () {
+                                                //Navigator.pop(context);
+                                              },
+                                              child: Text(
+                                                'OK',
+                                                style: TextStyle(
+                                                  fontSize: 14.0,
+                                                  color: Colors.white,
+                                                  height: 1.36,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                        title: Text(
+                                          'Are you sure you want to delete the selected Products from the cart?',
+                                          style: TextStyle(
+                                            fontSize: 14.0,
+                                            color: const Color(0xFF1F1F1F),
+                                            height: 1.36,
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 65.0,
+                                  child: Align(
+                                    alignment: Alignment.topRight,
+                                    child: Image.asset(
+                                      "assets/delete.png",
+                                      fit: BoxFit.cover,
+                                      height: 30,
+                                      width: 30,
+                                      color: Colors.black,
+                                    ),
                                   ),
                                 ),
                               ),

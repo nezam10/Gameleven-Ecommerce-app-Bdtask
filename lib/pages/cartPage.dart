@@ -27,7 +27,7 @@ class _CartPageState extends State<CartPage> {
       if (states.any(interactiveStates.contains)) {
         return Colors.blue;
       }
-      return Colors.red;
+      return Color.fromARGB(255, 210, 208, 208);
     }
 
     return SafeArea(

@@ -16,13 +16,13 @@ class AddToCart extends StatelessWidget {
               flex: 2,
               child: Container(
                 //color: Colors.blue,
-                height: MediaQuery.of(context).size.height / 4,
+                height: 170,
                 child: Padding(
                   padding: const EdgeInsets.only(
                       top: 35.0, bottom: 30, right: 30, left: 30),
                   child: Image.asset(
                     "assets/headset.png",
-                    fit: BoxFit.fitHeight,
+                    fit: BoxFit.fill,
                   ),
                 ),
               ),
@@ -134,7 +134,7 @@ class AddToCart extends StatelessWidget {
             // Path 245
             '<svg viewBox="16.5 570.5 381.85 1.0" ><path transform="translate(16.5, 570.5)" d="M 0 0 L 381.8505554199219 0" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="3 4" stroke-miterlimit="4" stroke-linecap="round" /></svg>',
             width: MediaQuery.of(context).size.width,
-            height: 5.0,
+            height: 1.0,
             color: Colors.blue,
           ),
         ),

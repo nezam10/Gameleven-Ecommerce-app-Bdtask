@@ -524,7 +524,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                               builder: (context) {
                                 return Container(
                                   width: MediaQuery.of(context).size.width,
-                                  height: 480.0,
+                                  height: 449.0,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.only(
                                         topRight: Radius.circular(10),

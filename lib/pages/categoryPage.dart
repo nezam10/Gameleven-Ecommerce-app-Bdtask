@@ -3,6 +3,7 @@ import 'package:bdtask_ecommerce_apps/widgets/categories3.dart';
 import 'package:bdtask_ecommerce_apps/widgets/categoriesPadding.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/bottomNavigationBarPage.dart';
 import '../widgets/categories.dart';
 import '../widgets/rowCategories.dart';
 
@@ -25,7 +26,14 @@ class CategoryPage extends StatelessWidget {
               child: Row(
                 children: [
                   IconButton(
-                      onPressed: () {}, icon: Icon(Icons.arrow_back_rounded)),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    BottonNavigationBarPage()));
+                      },
+                      icon: Icon(Icons.arrow_back_rounded)),
                   Text(
                     'Categories',
                     style: TextStyle(

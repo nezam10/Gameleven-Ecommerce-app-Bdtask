@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rotated_corner_decoration/rotated_corner_decoration.dart';
 
 import '../class/brandList.dart';
+import '../widgets/bottomNavigationBarPage.dart';
 
 class CartPage extends StatefulWidget {
   CartPage({Key? key}) : super(key: key);
@@ -41,7 +42,13 @@ class _CartPageState extends State<CartPage> {
             child: Row(
               children: [
                 IconButton(
-                    onPressed: () {}, icon: Icon(Icons.arrow_back_rounded)),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => BottonNavigationBarPage()));
+                    },
+                    icon: Icon(Icons.arrow_back_rounded)),
                 Text(
                   'Shopping Cart',
                   style: TextStyle(

@@ -8,7 +8,7 @@ class OrderPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20, top: 15),
+      padding: const EdgeInsets.only(left: 20, right: 20, top: 25),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,7 +21,8 @@ class OrderPage extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(height: 5),
+          SizedBox(height: 8),
+
           Container(
             alignment: Alignment(-0.89, 0.0),
             width: MediaQuery.of(context).size.width,
@@ -42,7 +43,7 @@ class OrderPage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 12),
+          SizedBox(height: 15),
           Text(
             'Select Payment method',
             style: TextStyle(
@@ -51,10 +52,10 @@ class OrderPage extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(height: 12),
+          SizedBox(height: 15),
           SizedBox(
             width: MediaQuery.of(context).size.width,
-            height: 70.0,
+            height: 80.0,
             child: Stack(
               children: <Widget>[
                 Positioned(
@@ -83,7 +84,7 @@ class OrderPage extends StatelessWidget {
                 Container(
                   alignment: Alignment(-0.74, -0.45),
                   width: MediaQuery.of(context).size.width,
-                  height: 70.0,
+                  height: 80.0,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(2.0),
                     border: Border.all(
@@ -122,7 +123,7 @@ class OrderPage extends StatelessWidget {
           SizedBox(height: 12),
           SizedBox(
             width: MediaQuery.of(context).size.width,
-            height: 70.0,
+            height: 80.0,
             child: Stack(
               children: <Widget>[
                 Positioned(
@@ -151,7 +152,7 @@ class OrderPage extends StatelessWidget {
                 Container(
                   alignment: Alignment(-0.74, -0.45),
                   width: MediaQuery.of(context).size.width,
-                  height: 70.0,
+                  height: 80.0,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(2.0),
                     border: Border.all(
@@ -191,7 +192,7 @@ class OrderPage extends StatelessWidget {
           Container(
             alignment: Alignment(-0.11, 0.3),
             width: MediaQuery.of(context).size.width,
-            height: 70.0,
+            height: 80.0,
             decoration: BoxDecoration(
               color: Colors.white,
               boxShadow: [

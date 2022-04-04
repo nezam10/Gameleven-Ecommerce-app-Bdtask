@@ -28,14 +28,14 @@ class ProductListView extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(5.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      height: MediaQuery.of(context).size.height / 5,
+                      height: 130,
                       width: MediaQuery.of(context).size.width / 1.2,
                       //color: Colors.blue,
                       child: Image.asset("$showbrandicon"),
@@ -50,7 +50,7 @@ class ProductListView extends StatelessWidget {
                       height: 1.42,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

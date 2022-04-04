@@ -1,3 +1,4 @@
+import 'package:bdtask_ecommerce_apps/widgets/bottomNavigationBarPage.dart';
 import 'package:flutter/material.dart';
 
 class AccountPage extends StatelessWidget {
@@ -18,7 +19,13 @@ class AccountPage extends StatelessWidget {
                   child: Row(
                     children: [
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        BottonNavigationBarPage()));
+                          },
                           icon: Icon(Icons.arrow_back_rounded)),
                       Text(
                         'Account',
@@ -33,7 +40,7 @@ class AccountPage extends StatelessWidget {
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 180.0,
+                  height: 186.0,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: [
@@ -79,6 +86,7 @@ class AccountPage extends StatelessWidget {
                     ],
                   ),
                 ),
+                SizedBox(height: 12),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: 280.0,

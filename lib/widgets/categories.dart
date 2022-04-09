@@ -7,8 +7,8 @@ class CategoriesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 140,
-      width: 135,
+      height: 130,
+      width: MediaQuery.of(context).size.width,
       color: Color(0xffE1E1E1),
       child: Padding(
         padding: const EdgeInsets.only(top: 10.0, bottom: 0.0),
@@ -46,7 +46,7 @@ class CategoriesWidget extends StatelessWidget {
             ),
             Container(
               height: 1,
-              width: 135,
+              width: MediaQuery.of(context).size.width,
               color: Color.fromARGB(255, 198, 193, 193),
             ),
           ],

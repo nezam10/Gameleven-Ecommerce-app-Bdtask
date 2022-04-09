@@ -143,10 +143,14 @@ class SkipPage1 extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               GestureDetector(
-                                onTap: () => Navigator.push(
+                                onTap: () {
+                                  Navigator.pushAndRemoveUntil(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => SkipPage2())),
+                                        builder: (context) => SkipPage2()),
+                                    (Route<dynamic> route) => false,
+                                  );
+                                },
                                 child: Container(
                                   alignment: Alignment.center,
                                   height: 30,

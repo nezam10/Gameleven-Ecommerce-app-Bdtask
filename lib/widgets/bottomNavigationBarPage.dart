@@ -37,8 +37,8 @@ class _BottonNavigationBarPageState extends State<BottonNavigationBarPage> {
       body: _pages[_selectIndex],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.red,
-        unselectedItemColor: Color(0xFF656567),
-        unselectedLabelStyle: TextStyle(color: Colors.grey, fontSize: 8),
+        unselectedItemColor: Color.fromARGB(255, 4, 4, 4),
+        unselectedLabelStyle: TextStyle(color: Colors.grey, fontSize: 10),
         showSelectedLabels: true,
         selectedIconTheme: IconThemeData(size: 30),
         showUnselectedLabels: true,

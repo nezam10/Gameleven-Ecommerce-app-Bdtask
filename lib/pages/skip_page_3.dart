@@ -129,10 +129,14 @@ class SkipPage3 extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               GestureDetector(
-                                onTap: () => Navigator.push(
+                                onTap: () {
+                                  Navigator.pushAndRemoveUntil(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => SignInPage())),
+                                        builder: (context) => SignInPage()),
+                                    (Route<dynamic> route) => false,
+                                  );
+                                },
                                 child: Container(
                                   alignment: Alignment.center,
                                   height: 30,

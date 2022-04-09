@@ -274,7 +274,7 @@ class _CartPageState extends State<CartPage> {
                                                       const Color(0xFFF0F0F0),
                                                 ),
                                                 child: Text(
-                                                  '+',
+                                                  '-',
                                                   style: TextStyle(
                                                     fontSize: 17.0,
                                                     color:
@@ -304,7 +304,7 @@ class _CartPageState extends State<CartPage> {
                                                       const Color(0xFFF0F0F0),
                                                 ),
                                                 child: Text(
-                                                  '-',
+                                                  '+',
                                                   style: TextStyle(
                                                     fontSize: 18.0,
                                                     color:

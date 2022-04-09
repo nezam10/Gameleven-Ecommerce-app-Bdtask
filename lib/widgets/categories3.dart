@@ -11,12 +11,12 @@ class Categories3 extends StatelessWidget {
     return Container(
       color: Colors.white,
       //height: 60,
-      width: MediaQuery.of(context).size.width / 1.6,
+      width: MediaQuery.of(context).size.width,
       child: ExpansionTile(
         title: Text(
           categoriesname3,
           style: TextStyle(
-            fontSize: 14.0,
+            fontSize: 13.0,
             color: const Color(0xFF797979),
           ),
         ),

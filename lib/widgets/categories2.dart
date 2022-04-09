@@ -11,7 +11,7 @@ class Categories2 extends StatelessWidget {
       child: Container(
         alignment: Alignment.centerLeft,
         height: 60,
-        width: MediaQuery.of(context).size.width / 1.75,
+        width: MediaQuery.of(context).size.width,
         color: Color(0xffF8F8F8),
         //color: Colors.blue,
         child: Text(

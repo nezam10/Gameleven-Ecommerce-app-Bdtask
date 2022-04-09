@@ -71,7 +71,8 @@ class AddToCart extends StatelessWidget {
                               width: 96.0,
                               height: 28.0,
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
                                   Container(
                                     alignment: Alignment(-0.05, -0.2),
@@ -182,12 +183,12 @@ class AddToCart extends StatelessWidget {
                   Expanded(
                     flex: 1,
                     child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => CheckOutPage()));
-                      },
+                      // onTap: () {
+                      //   Navigator.push(
+                      //       context,
+                      //       MaterialPageRoute(
+                      //           builder: (context) => CheckOutPage()));
+                      // },
                       child: Container(
                         width: MediaQuery.of(context).size.width,
                         height: 36.0,

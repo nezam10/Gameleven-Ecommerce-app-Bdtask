@@ -16,8 +16,11 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     hideStatusBar();
     Timer(const Duration(seconds: 2), () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const SkipPage1()));
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => SkipPage1()),
+        (Route<dynamic> route) => false,
+      );
     });
     super.initState();
   }

@@ -17,7 +17,6 @@ class OrderPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
               Text(
                 'Amount to pay',
                 style: TextStyle(
@@ -26,8 +25,7 @@ class OrderPage extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              SizedBox(height: MediaQuery.of(context).size.height/80),
-
+              SizedBox(height: MediaQuery.of(context).size.height / 80),
               Container(
                 alignment: Alignment(-0.89, 0.0),
                 width: MediaQuery.of(context).size.width,
@@ -48,7 +46,7 @@ class OrderPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: MediaQuery.of(context).size.height/50),
+              SizedBox(height: MediaQuery.of(context).size.height / 50),
               Text(
                 'Select Payment method',
                 style: TextStyle(
@@ -57,7 +55,7 @@ class OrderPage extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              SizedBox(height: MediaQuery.of(context).size.height/60),
+              SizedBox(height: MediaQuery.of(context).size.height / 60),
               SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: 80.0,
@@ -125,7 +123,7 @@ class OrderPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: MediaQuery.of(context).size.height/50),
+              SizedBox(height: MediaQuery.of(context).size.height / 50),
               SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: 80.0,
@@ -197,7 +195,7 @@ class OrderPage extends StatelessWidget {
               Container(
                 alignment: Alignment(-0.11, 0.3),
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height/ 12.5,
+                height: MediaQuery.of(context).size.height / 12.5,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   // boxShadow: [
@@ -226,6 +224,7 @@ class OrderPage extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: 10),
             ],
           ),
         ),

@@ -28,7 +28,7 @@ class _SignInPageState extends State<SignInPage> {
     if (_formkey.currentState!.validate()) {
       if (checkEmail == a) {
         if (checkPassword == b) {
-          toastMessage('Login Successful');
+          //toastMessage('Login Successful');
           Navigator.push(
             context,
             MaterialPageRoute(
@@ -52,7 +52,7 @@ class _SignInPageState extends State<SignInPage> {
         gravity: ToastGravity.BOTTOM,
         timeInSecForIosWeb: 1,
         textColor: Colors.white,
-        backgroundColor: Colors.red[200],
+        backgroundColor: Color.fromARGB(255, 109, 172, 248),
         fontSize: 16.0);
   }
 

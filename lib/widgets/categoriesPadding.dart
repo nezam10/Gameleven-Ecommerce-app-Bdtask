@@ -9,7 +9,7 @@ class CategoriesPadding extends StatelessWidget {
       padding: const EdgeInsets.only(left: 0.0),
       child: Container(
         height: 1,
-        width: MediaQuery.of(context).size.width / 1.9,
+        width: MediaQuery.of(context).size.width,
         color: Color.fromARGB(255, 198, 193, 193),
       ),
     );

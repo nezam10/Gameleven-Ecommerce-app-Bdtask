@@ -1,3 +1,5 @@
+import 'package:bdtask_ecommerce_apps/class/brandList.dart';
+import 'package:bdtask_ecommerce_apps/pages/categoryPage.dart';
 import 'package:bdtask_ecommerce_apps/widgets/infoHomePage.dart';
 import 'package:bdtask_ecommerce_apps/widgets/slider.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +12,13 @@ class HomePage1 extends StatefulWidget {
 }
 
 class _HomePage1State extends State<HomePage1> with TickerProviderStateMixin {
+  final GlobalKey<ScaffoldState> _globalKey = GlobalKey<ScaffoldState>();
+  List<String> productList = [
+    'game',
+    'headset',
+    'pc',
+  ];
+
   @override
   Widget build(BuildContext context) {
     TabController _tabController = TabController(vsync: this, length: 5);
@@ -18,6 +27,10 @@ class _HomePage1State extends State<HomePage1> with TickerProviderStateMixin {
       child: SafeArea(
         child: Scaffold(
           //extendBody: true,
+          key: _globalKey,
+          drawer: Drawer(
+            child: CategoryPage(),
+          ),
           body: Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
@@ -35,7 +48,11 @@ class _HomePage1State extends State<HomePage1> with TickerProviderStateMixin {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         IconButton(
-                            onPressed: () {}, icon: Icon(Icons.menu, size: 28)),
+                          onPressed: () {
+                            _globalKey.currentState!.openDrawer();
+                          },
+                          icon: Icon(Icons.menu, size: 28),
+                        ),
                         SizedBox(width: 5),
                         Container(
                           width: MediaQuery.of(context).size.width / 1.27,
@@ -47,6 +64,15 @@ class _HomePage1State extends State<HomePage1> with TickerProviderStateMixin {
                           child: Padding(
                             padding: const EdgeInsets.only(left: 10, right: 10),
                             child: TextFormField(
+                              onChanged: (value) {
+                                setState(() {
+                                  blist().brandList2 = blist()
+                                      .brandList2
+                                      .where(
+                                          (element) => element.contains(value))
+                                      .toList();
+                                });
+                              },
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: "What would you like to buy?",
